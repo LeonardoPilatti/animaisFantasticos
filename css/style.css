@@ -18,4 +18,33 @@ body {
     /* Esse webkit eh para a fonte ficar mais limpa no navegador */
     -webkit-font-smoothing: antialiased;
     display: grid;
+    /* minimo de 300px e máximo de 800px */
+    grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+}
+
+.menu {
+    /* quero que o menu comece da coluna 3 e vá até a 5 */
+    grid-column: 3 / 5;
+    margin-top: 2rem;
+    /* dois rem pq é relativo a quantidade de pixels */
+    margin-bottom: 2rem;
+    background: #fb5;
+}
+
+.menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;
+    margin-right: 10px;
+    color: #222;
+    text-decoration: none;
+    font-family: monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: .875em;
 }
