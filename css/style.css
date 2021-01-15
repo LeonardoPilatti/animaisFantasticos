@@ -224,3 +224,36 @@ body {
         margin-bottom: 0px;
     }
 }
+
+
+
+
+
+
+/* ***************Apartir daqui eh o que preciso para o Javascript funcionar**************** */
+
+
+/* esse eh para esconder o conteudo da lista de animais */
+.js-tabconteudo section {
+    display: none;
+}
+
+/* esse eh para aparecer o conteudo da lista de animais quando clica */
+.js-tabconteudo section.ativo {
+    display: block;
+    /* com o animation estou chamando o keyframes com o nome "show". com duracao de 0.5segundos e forwards para ficar na posicao "to", posicao final */
+    animation: show .5s forwards;
+}
+
+@keyframes show {
+    /* from é o inicio, para começar com menos 30pixels */
+    from {
+        opacity: 0;
+        transform: translate3d(-30px, 0, 0);
+    }
+    /* to é para o final, como quero que fique, no caso posicao 0 0 0 é a inicial */
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
