@@ -4,7 +4,7 @@ const tabConteudo = document.querySelectorAll('.js-tabconteudo section');
 // console.log(tabConteudo);   para testar se pegou o conteudo certo;
 
 // nesta função eu estou removendo a classe ativo da section, que pode ser qualquer nome, para não poder ficar duas sections com a 
-// classe de ativo, aí depois eu adiciona a classe de ativo para a que quero. OBS: Uso o ForEach pq ele remove de cada item daí  
+// classe de ativo, aí depois eu adiciono a classe de ativo para a que quero. OBS: Uso o ForEach pq ele remove de cada item daí  
 function activeTab(index) {
     tabConteudo.forEach((section) => {
         section.classList.remove('ativo');
