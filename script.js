@@ -36,6 +36,7 @@ initTabNav();
 
 // OBS: colocar tudo numa funcao para ela ficar no escopo da funcao, para eu poder usar o nome em outros lugares, aí só preciso iniciar a funcao para funcionar 
 
+// aqui para baixo é a animação do FAQ
 function initAccordion() {
     const accordionList = document.querySelectorAll('.js-accordion dt');
     const classeAtivo = 'ativo'
@@ -56,3 +57,28 @@ function initAccordion() {
     }
 }
 initAccordion();
+
+
+/// aqui é para fazer a animação de scroll suave:
+
+function initScrollSuave(){
+    /// aqui estou falando somente com o A que tenha href que comece com a #, é o "^" que diz que inicia
+    const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+
+    function scrollToSection(event) {
+    event.preventDefault();  /// aqui estou prevenindo para não acontecer o clicar e ir para o id direto
+    const href = event.currentTarget.getAttribute('href');  /// aqui estou selecionando somente o href do event, no caso, do que cliquei
+    const section = document.querySelector(href);
+    // console.log(href);   // aqui estou somente fazendo aparecer no console o href para ver se está certo
+
+    section.scrollIntoView({   ///esse aqui faz ir para o ID
+        behavior: 'smooth',   /// animacao de ir para o local do ID
+        block: 'start',       /// para ficar no topo, também posso usas end e outros para posicionar diferente
+    })
+    }
+
+    linksInternos.forEach((link) => {
+    link.addEventListener('click', scrollToSection);
+    });
+}
+initScrollSuave();
