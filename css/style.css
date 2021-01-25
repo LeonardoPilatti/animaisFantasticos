@@ -237,18 +237,27 @@ body {
 
 
 /* esse eh para esconder o conteudo da lista de animais */
-.js .js-tabconteudo section {
+.js [data-tab='conteudo'] section {
     display: none;
 }
 
 /* esse eh para aparecer o conteudo da lista de animais quando clica */
-.js-tabconteudo section.ativo {
-    display: block;
+[data-tab='conteudo'] section.ativo {
+    display: block !important;
     /* com o animation estou chamando o keyframes com o nome "show". com duracao de 0.5segundos e forwards para ficar na posicao "to", posicao final */
-    animation: show .5s forwards;
 }
 
-@keyframes show {
+[data-tab='conteudo'] section.ativo.show-right {
+    /* com o animation estou chamando o keyframes com o nome "show". com duracao de 0.5segundos e forwards para ficar na posicao "to", posicao final */
+    animation: show-right .5s forwards;
+}
+
+[data-tab='conteudo'] section.ativo.show-down {
+    /* com o animation estou chamando o keyframes com o nome "show". com duracao de 0.5segundos e forwards para ficar na posicao "to", posicao final */
+    animation: show-down .5s forwards;
+}
+
+@keyframes show-right {
     /* from é o inicio, para começar com menos 30pixels */
     from {
         opacity: 0;
@@ -261,23 +270,36 @@ body {
     }
 }
 
+@keyframes show-down {
+    /* from é o inicio, para começar com menos 30pixels */
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    /* to é para o final, como quero que fique, no caso posicao 0 0 0 é a inicial */
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 /* aqui para baixo é do FAQ, para fazer as animações com o JS */
 /* OBS o .js na frente é para ele funcionar somente caso tenha o javascript na máquina */
-.js .js-accordion dd {
+.js [data-anime="accordion"] dd {
     display: none;
 }
 
-.js .js-accordion dd.ativo {
+.js [data-anime="accordion"] dd.ativo {
     display: block;
     animation: slideDown .5s forwards;
 }
 
-.js-accordion dt::after {
+[data-anime="accordion"] dt::after {
     content: '⯈';
     margin-left: 10px;
 }
 
-.js-accordion dt.ativo::after {
+[data-anime="accordion"] dt.ativo::after {
     content: '⯆';
 }
 
@@ -294,13 +316,13 @@ body {
 
 /* Animação para aparecer e sumir as seções do site */
 
-.js .js-scroll {
+.js [data-anime="scroll"] {
     opacity: 0;
     transition: .3s;  /* irá aparecer em .3 segundos */
     transform: translate3d(-30px, 0, 0);
 }
 
-.js .js-scroll.ativo {
+.js [data-anime="scroll"].ativo {
     opacity: 1;
     transform: translate3d(0, 0, 0);
 }
