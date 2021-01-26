@@ -23,5 +23,8 @@ export default function initModal() {
     }
 }
 
+/// o modal serve para aparecer a caixa de login quando clico no login no menu, serve para aparecer uma caixa no navegador,
+/// mas por fora da pagina que está;
+
 
 
