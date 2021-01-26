@@ -1,0 +1,58 @@
+[data-menu="button"] {
+    display: none;
+}
+
+@media (max-width:700px) {
+    .js [data-menu="button"] {  /* .js na frente pois o menu só vai se tornar mobile quando tiver o javascript no navegador */
+        display: flex;
+        background: #222;
+        border: none;
+        padding: .5rem 1rem;
+        border-radius: 4px;
+        text-transform: uppercase;
+        font-family: 'IBM Plex Mono', monospace;
+        font-weight: bold;
+        color: #FFF;
+        cursor: pointer;
+        margin: 10px;
+        align-items: center;
+        position: relative;   /* para a list ser position absolute nele, para poder usar o 'top' */
+        z-index: 300;
+    }
+    
+    .js [data-menu="button"]::before {   /* aqui é para criar o hamburguer ao lado da palavra menu */
+        content: "";
+        display: inline-block;  /* display inline-block para ficar no mesmo nivel do menu */
+        height: 2px;
+        width: 12px;
+        background: #FFF;
+        box-shadow: 0 4px #FFF, 0 -4px #FFF;  /* o primeiro quatro é para criar a sombra para baixo e o -4 é para criar para cima */
+        margin-right: 4px;
+        transition: transform .3s;
+    }
+
+    .js [data-menu="button"].ativo::before {
+        transform: rotate(90deg);   /* para ele girar 90 graus quando ele estiver na classe ativo */
+    }
+
+    .js [data-menu="list"] {     /* esse #menu é para falar com o ID menu, usa a hashtag para falar */
+        display: none;
+        position: absolute;
+        background: #FB5;
+        width: 160px;
+        z-index: 200;
+        top: 0;
+        padding: 60px 0 20px 0;
+        box-shadow: 2px 2px 2px 0 rgba(0,0,0,.2);  /* para criar uma sombrinha nele, para destacar */
+    }
+
+    .js [data-menu="list"].ativo {
+        display: block;
+        animation: show-right .3s forwards;  /* essa animacao show-right está no geral.css */
+    }
+
+    .js .dropdown-menu {        /* esse é para o sobre que abre o menu, para ele ficar aberto no mobile */
+        position: static;  /* pois inicialmente é position absolut */
+        border: none;
+    }
+}

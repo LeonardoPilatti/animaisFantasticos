@@ -5,6 +5,7 @@ import initTabNav from './modules/tabnav.js';
 import initModal from './modules/modal.js';
 import initTooltip from './modules/tooltip.js';
 import initDropDownMenu from './modules/dropDownMenu.js';
+import initMenuMobile from './modules/menu-mobile.js';
 // o nome entre o import e o from, é o nome da função, para ativar a função em baixo, que está em verde.
 
 initScrollSuave();
@@ -14,3 +15,4 @@ initTabNav();
 initModal();
 initTooltip();
 initDropDownMenu();
+initMenuMobile();

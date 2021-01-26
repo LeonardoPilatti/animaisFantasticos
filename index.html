@@ -19,7 +19,10 @@
 <body>
     <div class="grid-container">
         <nav class="menu" data-menu="suave"> 
-            <ul>
+            <!-- esse 'aria-expanded' eh para dizer para o robozinho do navegador que é um menu escondido e o 'aria-controls menu
+                porque é para controlar o menu, esses dois itens são questões de acessibilidade, o false sempre será false' -->
+            <button data-menu="button" aria-expanded="false" aria-controls="menu">Menu</button>
+            <ul data-menu="list" id="menu">
             <li><a href="#animais">Animais</a></li>
             <li data-dropdown>
                 <a href="sobre.html">Sobre</a>

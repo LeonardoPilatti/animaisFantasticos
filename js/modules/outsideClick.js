@@ -1,11 +1,13 @@
+/// esse outsideClick é para quando clicar fora do menu, ele fechar o menu ou quando clicar fora do dropdownMenu, ele sair
 export default function outsideClick(element, events, callback) {
     const html = document.documentElement;    /// aqui estou selecionando o html, para quando clicar fora do menu do sobre, ele feche
     const outside = 'data-outside';
 
     if(!element.hasAttribute(outside)) {
       events.forEach((userEvent) => {
-        html.addEventListener(userEvent, handleOutsideClick); 
-      })
+        setTimeout(() => {html.addEventListener(userEvent, handleOutsideClick)});  /// esse setTimeOut faz o addeventlistener esperar na fila para carregar 
+      });
+
       html.addEventListener('click', handleOutsideClick);  /// aqui estou adicionando o evento de clicar fora e ativando a funcao
       element.setAttribute(outside, '');
     }
