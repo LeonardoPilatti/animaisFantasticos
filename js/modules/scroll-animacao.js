@@ -12,7 +12,7 @@ export default function initAnimacaoScroll() {
           const isSectionVisible = (sectionTop - windowMetade) < 0;
           if(isSectionVisible) {
               sectionItem.classList.add('ativo');
-          } else {
+          } else if(sectionItem.classList.contains('ativo')) {  /// aqui estou verificando se a section já tem a classe de ativo, se tiver, irá remover, se não tiver, não irá fazer nada 
               sectionItem.classList.remove('ativo');
           }
       })
