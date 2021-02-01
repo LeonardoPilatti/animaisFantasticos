@@ -189,6 +189,13 @@ body {
     background: #fb5;  
 }
 
+.btc-preco {
+    background: #3F4;
+    padding: .2rem .5rem;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
 .copy {
     grid-column: 3 / 5;
     margin-bottom: 2rem;
