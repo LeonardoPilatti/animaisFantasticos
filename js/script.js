@@ -8,6 +8,7 @@ import initDropDownMenu from './modules/dropDownMenu.js';
 import initMenuMobile from './modules/menu-mobile.js';
 import initAnimaNumeros from './modules/anima-numeros.js';
 import initFuncionamento from './modules/horarioFuncionamento.js';
+import initFetchAnimais from './modules/fetch-animais.js';
 // o nome entre o import e o from, é o nome da função, para ativar a função em baixo, que está em verde.
 
 initScrollSuave();
@@ -20,3 +21,4 @@ initDropDownMenu();
 initMenuMobile();
 initAnimaNumeros();
 initFuncionamento();
+initFetchAnimais();

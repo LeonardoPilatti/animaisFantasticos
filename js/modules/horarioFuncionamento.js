@@ -2,7 +2,7 @@ export default function initFuncionamento() {
     const funcionamento = document.querySelector('[data-semana]');
     const diasSemana = funcionamento.dataset.semana.split(',').map(Number);  // com o split estou transformando a nodeList funcionamento em Array; e com o map(Number) estou transformando a array que era string em Number; estou pegando o dia da semana de funcionamento aqui;
     const horarioSemana = funcionamento.dataset.horario.split(',').map(Number);  // aqui estou pegando o horario de funcionamento
-    console.log(diasSemana);   // me retorna os dias da semana que coloquei lá no html;
+    // console.log(diasSemana);   // me retorna os dias da semana que coloquei lá no html;
     
     const dataAgora = new Date();
     const diaAgora = dataAgora.getDay();  /// aqui estou pegando o dia da semana que é;
@@ -22,7 +22,7 @@ export default function initFuncionamento() {
     }
     
     
-    console.log(horarioAberto)
+    // console.log(horarioAberto)
 }
 
 
